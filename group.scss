@@ -1,0 +1,88 @@
+.container, .table {
+                display: flex;
+                flex-wrap: wrap;
+  				margin-left: auto;
+  				margin-right: auto;
+}
+
+.container {
+			div {
+                background-color: yellowgreen;
+                color: white;
+                text-align: center;
+                font-size: 20px;
+                margin: auto;
+                padding: 20px;
+                width: 80px;
+			}
+}
+
+$hovColor: grey;
+
+a:hover {
+  background-color: $hovColor;
+}
+.container > div:hover {
+	background-color: $hovColor;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+input[type=number] { -moz-appearance:textfield; 
+width: 28px
+}
+
+table {
+	margin: auto;
+}
+
+caption {
+	background-color: yellowgreen;
+    border-radius: 5px 5px 5px 5px;
+    padding: 15px;
+    font-size: 30px;
+  	font-weight: bold;
+}
+
+$color: black;
+
+%rows {
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+	height: 20px;
+	font-family: sans-serif;
+  	font-size: 18px;
+  	font-weight: bold;
+  	border: 1px solid black;
+  	padding: 10px;
+  	margin: 10px; 
+}
+
+th {
+	@extend %rows;
+	background-color: blue;
+  	color: white; 
+}
+
+.odd {
+  @extend %rows;
+  background-color: white;
+  color: $color;
+  border: 1px solid black;
+}
+
+.even {
+  @extend %rows;
+  background-color: red;
+  color: $color;
+}
+
+@media print {
+          .container {
+              display: none;
+            }
+        }
